@@ -10,10 +10,7 @@ ul,li {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-span {
-  color: #ffffff;
-  display: inline-block;
+  color: #fff;
 }
 header {
   background-color: #010f22;

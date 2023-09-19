@@ -1,14 +1,13 @@
-import { useContext } from "react"
-import { Credentials } from "../../Contexts/Credentials"
-import { memo } from "react"
-const Navbar =({login , signUp })=>{
-    const {cradentials} = useContext(Credentials)
+import styled from "styled-components";
+const Navlist = styled.ul `
+    display:flex;
+    justify-content:space-between;
+`
+const Navbar =({navItems})=>{
     return <nav>
-        <ul className="navList">
-            <li><a href="/login">{login}</a></li>
-            <li><a href="/login">{signUp}</a></li>
-            <span>Email:{cradentials}</span>
-        </ul>
+               <Navlist>
+                    {navItems.map((item)=>( <li>{item}</li>))}
+               </Navlist>
     </nav>
 }
-export default memo(Navbar)
+export default Navbar;
