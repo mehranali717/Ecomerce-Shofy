@@ -20,10 +20,10 @@ header {
   display: flex;
   max-width: 1140px;
   justify-content: space-between;
-  margin: 0 auto;
+  padding:0px 20px;
 }
 nav {
-  width: 350px;
+  width: 250px;
 }
 .navList {
   display: flex;

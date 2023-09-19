@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 const Sidebarmenu = styled.div`
     width: 250px;
-    height: 86vh;
+    height: 82vh;
     background-color: #333;
     color: white;
     padding: 20px;

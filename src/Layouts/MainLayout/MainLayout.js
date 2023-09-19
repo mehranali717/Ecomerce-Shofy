@@ -8,10 +8,11 @@ display:flex;
 `
 const MainLayout =({children})=>{
     const {cradentials} = useContext(Credentials)
+    const {showSidebar} = useContext(Credentials)
     return <>
                 <Header navItems={cradentials}/>
                     <LayoutWrapper>
-                        <Sidebar/>
+                       {showSidebar && <Sidebar/>} 
                         <main>{children}</main>
                     </LayoutWrapper>
     </>
