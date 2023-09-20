@@ -4,14 +4,17 @@ import styled from 'styled-components';
 const Sidebarmenu = styled.div`
     width: 250px;
     height: 82vh;
-    background-color: #333;
-    color: white;
+    background-color: #e0e0e0;
+    color: #464545;
     padding: 20px;
 `
 const SidebarItems = styled.ul`
 display:flex;
 flex-direction:column;
 gap:20px;
+& a {
+  color:#464545;
+}
 `
 const Sidebar =()=>{
   return (

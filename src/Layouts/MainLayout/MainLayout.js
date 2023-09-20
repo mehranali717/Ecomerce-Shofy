@@ -3,6 +3,7 @@ import Header from "../../Section/Header/Header";
 import styled from "styled-components";
 import { useContext } from "react";
 import { Credentials } from "../../Contexts/Credentials";
+import { Outlet } from "react-router-dom";
 const LayoutWrapper = styled.div `
 display:flex;
 `
@@ -14,6 +15,7 @@ const MainLayout =({children})=>{
                     <LayoutWrapper>
                        {showSidebar && <Sidebar/>} 
                         <main>{children}</main>
+                        <Outlet />
                     </LayoutWrapper>
     </>
 }

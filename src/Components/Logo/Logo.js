@@ -42,7 +42,7 @@ const HamBurger = styled.span`
     `
 const Logo =({logo})=>{
     const {cradentials} = useContext(Credentials);
-    const {showSidebar ,setShowSidebar} = useContext(Credentials)
+    const {showSidebar ,setShowSidebar} = useContext(Credentials);
     const displaySidebar =()=>{
         setShowSidebar(!showSidebar)
     }
