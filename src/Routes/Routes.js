@@ -1,13 +1,9 @@
-import {Route , Routes, Navigate ,useRoutes} from 'react-router-dom';
-import Home from '../../Pages/Home/Home';
-import Login from '../../Section/Login/Login';
-import Admin from '../Admin/Admin';
-import MainLayout from '../../Layouts/MainLayout/MainLayout';
-import User from '../User/User';
 import { useContext } from 'react';
-import { Credentials } from '../../Contexts/Credentials';
-import Register from '../../Layouts/Register/Register';
-const AllRoutes = ()=>{
+import {Navigate ,useRoutes} from 'react-router-dom';
+import {Home ,Login ,Admin ,User} from '../Pages';
+import {MainLayout , Register} from '../Layouts/index';
+import { Credentials } from '../Contexts/Credentials';
+const Routes = ()=>{
     const {cradentials} = useContext(Credentials);
     let routes = useRoutes([
         {
@@ -28,7 +24,7 @@ const AllRoutes = ()=>{
     ])
     return routes
 }
-export default AllRoutes;
+export default Routes;
 const ProtectedRoutes =({ children}) =>{
     const emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
     const {cradentials} = useContext(Credentials);

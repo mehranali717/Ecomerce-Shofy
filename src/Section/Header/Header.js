@@ -1,5 +1,4 @@
-import Logo from "../../Components/Logo/Logo"
-import Navbar from "../../Components/Navbar/Navbar"
+import {Logo, Navbar} from "../../Components";
 const Header =({navItems})=>{
     return <header>
                 <div className="container">

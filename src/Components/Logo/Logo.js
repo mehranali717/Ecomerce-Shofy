@@ -5,7 +5,7 @@ const HamBurger = styled.span`
 @media only screen and (max-width: 767px) {
     width:30px;
     height:3px;
-    background-color:#4d2600;
+    background-color:#e65c00;
     display:inline-block;
     z-index:1;
     top:15px;
@@ -16,7 +16,7 @@ const HamBurger = styled.span`
         content:'';
         position:absolute;
         top:-10px;
-        background-color:#4d2600;
+        background-color:#e65c00;
         height:3px;
         width:30px;
         cursor:pointer;
@@ -25,7 +25,7 @@ const HamBurger = styled.span`
         content:'';
         position:absolute;
         top:10px;
-        background-color:#4d2600;
+        background-color:#e65c00;
         height:3px;
         width:30px;
         cursor:pointer;
