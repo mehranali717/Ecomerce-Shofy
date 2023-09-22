@@ -1,4 +1,13 @@
+import Image from "../../Assets/Images/Dashboard.jpg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import Card from "../../Components/Card/Card"
 const User =()=>{
-    return <h1>Hello From User</h1>
+    return <>
+        <LazyLoadImage src={Image}
+        width={300} height={250}
+        alt="Image Alt"
+      />
+        <Card />
+    </>
 }
 export default User

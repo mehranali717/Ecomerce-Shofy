@@ -6,6 +6,7 @@ import { Credentials } from "../../Contexts/Credentials";
 import { Outlet } from "react-router-dom";
 const LayoutWrapper = styled.div `
 display:flex;
+align-items:center;
 `
 const MainLayout =()=>{
     const {cradentials} = useContext(Credentials)

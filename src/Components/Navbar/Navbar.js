@@ -6,7 +6,7 @@ const Navlist = styled.ul `
 const Navbar =({navItems})=>{
     return <nav>
                <Navlist>
-                    {navItems.map((item)=>( <li>{item}</li>))}
+                    {navItems.map((item , index)=>( <li key={index}>{item}</li>))}
                </Navlist>
     </nav>
 }

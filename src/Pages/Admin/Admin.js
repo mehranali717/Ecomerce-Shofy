@@ -1,4 +1,12 @@
+import { useMemo } from "react";
+import Card from "../../Components/Card/Card"
 const Admin =()=>{
-    return <h1>Hello From Admin</h1>
+    const memoizedChild = useMemo(()=>
+        {
+            return <Card />;
+        });
+    return <>
+        {memoizedChild}
+    </>
 }
 export default Admin

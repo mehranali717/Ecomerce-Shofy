@@ -1,8 +1,12 @@
-import { useContext } from 'react';
+import React, { Suspense, useContext } from 'react';
 import {Navigate ,useRoutes} from 'react-router-dom';
-import {Home ,Login ,Admin ,User} from '../Pages';
 import {MainLayout , Register} from '../Layouts/index';
 import { Credentials } from '../Contexts/Credentials';
+const Home = React.lazy(() => import('../Pages/Home/Home'));
+const Login = React.lazy(() => import('../Pages/Login/Login'));
+const Admin = React.lazy(() => import('../Pages/Admin/Admin'));
+const User = React.lazy(() => import('../Pages/User/User'));
+
 const Routes = ()=>{
     const {cradentials} = useContext(Credentials);
     let routes = useRoutes([
@@ -22,7 +26,9 @@ const Routes = ()=>{
             ]
         }
     ])
-    return routes
+    return <Suspense fallback={<div>Loading...</div>} >
+        {routes}
+    </Suspense>
 }
 export default Routes;
 const ProtectedRoutes =({ children}) =>{

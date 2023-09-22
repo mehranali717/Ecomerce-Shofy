@@ -63,7 +63,7 @@ const Logo =({logo})=>{
     
     return <>
             <Desklogo>{logo}</Desklogo>
-            {cradentials.map((email)=>(email && <HamBurger onClick={()=>displaySidebar()}/>)) }
+            {cradentials.map((email , index)=>(email && <HamBurger onClick={()=>displaySidebar()} key={index}/>)) }
            </>
 }
 export default Logo
