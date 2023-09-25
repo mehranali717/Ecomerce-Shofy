@@ -41,7 +41,7 @@ const HamBurger = styled.span`
 }
     `
 const Logo =({logo})=>{
-    const {cradentials} = useContext(Credentials);
+    const {credentials} = useContext(Credentials);
     const {showSidebar ,setShowSidebar} = useContext(Credentials);
     const displaySidebar =()=>{
         setShowSidebar(!showSidebar)
@@ -63,7 +63,7 @@ const Logo =({logo})=>{
     
     return <>
             <Desklogo>{logo}</Desklogo>
-            {cradentials.map((email , index)=>(email && <HamBurger onClick={()=>displaySidebar()} key={index}/>)) }
+            {credentials.map((email , index)=>(email && <HamBurger onClick={()=>displaySidebar()} key={index}/>)) }
            </>
 }
 export default Logo

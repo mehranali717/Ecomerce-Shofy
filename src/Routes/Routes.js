@@ -8,10 +8,10 @@ const Admin = React.lazy(() => import('../Pages/Admin/Admin'));
 const User = React.lazy(() => import('../Pages/User/User'));
 
 const Routes = ()=>{
-    const {cradentials} = useContext(Credentials);
+    const {credentials} = useContext(Credentials);
     let routes = useRoutes([
         {
-            element:<ProtectedRoutes email={cradentials}><MainLayout/></ProtectedRoutes>,
+            element:<ProtectedRoutes email={credentials}><MainLayout/></ProtectedRoutes>,
             children:[
                 {path:"/home", element:<Home />},
                 {path:"/admin" , element:<Admin />},
@@ -33,15 +33,15 @@ const Routes = ()=>{
 export default Routes;
 const ProtectedRoutes =({ children}) =>{
     const emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
-    const {cradentials} = useContext(Credentials);
-	if((emailRegex.test(cradentials)))
+    const {credentials} = useContext(Credentials);
+	if((emailRegex.test(credentials)))
     return children;
 	return <Navigate to="/login" />;
 }
 
 //////////////////////other Ways to set routes///////////////////////////////////////////
  // return <Routes>
-    //             <Route element={<ProtectedRoutes email={cradentials}><MainLayout /></ProtectedRoutes>}>
+    //             <Route element={<ProtectedRoutes email={credentials}><MainLayout /></ProtectedRoutes>}>
     //                 <Route path='/home' element={<Home />} />
     //                 <Route path='/admin' element={<Admin />} />
     //                 <Route path='/user' element = {<User />}/>
@@ -52,7 +52,7 @@ const ProtectedRoutes =({ children}) =>{
     //             </Route>
     //             {/* <Route path='/home' element={<ProtectedRoutes><MainLayout><Home/></MainLayout></ProtectedRoutes>}/>
     //             <Route path='/login' element={<Register><Login /></Register>}/>
-    //             <Route path="/admin" element={<ProtectedRoutes email={cradentials}><MainLayout><Admin/></MainLayout></ProtectedRoutes>}/>
-    //             <Route path='/user' element={<ProtectedRoutes email={cradentials}><MainLayout><User/></MainLayout></ProtectedRoutes>}/>
+    //             <Route path="/admin" element={<ProtectedRoutes email={credentials}><MainLayout><Admin/></MainLayout></ProtectedRoutes>}/>
+    //             <Route path='/user' element={<ProtectedRoutes email={credentials}><MainLayout><User/></MainLayout></ProtectedRoutes>}/>
     //             <Route path='*' element={<Navigate to="/login"/>}/> */}
     //        </Routes>

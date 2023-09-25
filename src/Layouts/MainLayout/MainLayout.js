@@ -9,10 +9,10 @@ display:flex;
 align-items:center;
 `
 const MainLayout =()=>{
-    const {cradentials} = useContext(Credentials)
+    const {credentials} = useContext(Credentials)
     const {showSidebar} = useContext(Credentials)
     return <>
-                <Header navItems={cradentials}/>
+                <Header navItems={credentials}/>
                     <LayoutWrapper>
                        {showSidebar && <Sidebar/>} 
                         <Outlet />
